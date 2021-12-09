@@ -13,7 +13,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button type="button" class="navbar-brand btn btn-outline-dark "id="yournotes">Keep Notes</button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -21,9 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
+                    
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -34,11 +33,11 @@
     </nav>
 
     <div class="container my-3">
-        <h1>my notes</h1>
+        <!-- <h1>my notes</h1> -->
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Add a Note</h5>
+                <h4 class="card-title">Put a Note</h4>
                 <div class="form-group">
                     <textarea class="form-control" id="addtext" rows="3"></textarea>
                 </div>
@@ -46,9 +45,10 @@
             </div>
         </div>
 
-        <hr>
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="yournotes">Your Notes</button>
-        <hr>
+        <div class="text-center my-2">
+            <h2>Your Notes</h2>
+        </div>
+        
         <div id="notes" class="row container-fluid">
 
         </div>

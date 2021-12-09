@@ -43,6 +43,7 @@ function update(){
 
 function getandupdate(){
     let note=document.getElementById("addtext").value;
+    document.getElementById("addtext").value="";
     console.log(note); 
 
     let notejsonArray=[];
@@ -58,6 +59,7 @@ function getandupdate(){
         notejsonArray.push([note]);
         localStorage.setItem('notesjson',JSON.stringify(notejsonArray));
     }
+    
     update();
 }
 
