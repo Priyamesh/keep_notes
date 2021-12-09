@@ -1,19 +1,17 @@
 console.log("hello");
 
-// function dlt(index)
-// {
-//     console.log("dlt button pressed");
+function dlt(index)
+{
+    console.log("dlt button pressed");
 
-//     let notejsonArrayStr=localStorage.getItem('notesjson')
-//     let notejsonArray=JSON.parse(notejsonArrayStr);
+    let notejsonArrayStr=localStorage.getItem('notesjson')
+    let notejsonArray=JSON.parse(notejsonArrayStr);
 
-//     notejsonArray.splice(index,1);
-//     localStorage.setItem('notesjson',notejsonArray);
-//     update();
+    notejsonArray.splice(index,1);
+    localStorage.setItem('notesjson',JSON.stringify(notejsonArray));
 
-    
-
-// }
+    update();
+}
 
 function update(){
     
@@ -21,7 +19,6 @@ function update(){
 
     if(localStorage.getItem('notesjson')!=null)
     {
-
         let notejsonArrayStr=localStorage.getItem('notesjson')
         let notejsonArray=JSON.parse(notejsonArrayStr);
         
@@ -36,15 +33,12 @@ function update(){
             </div>
         </div>`
         });
-
         notesdiv.innerHTML=res;
-
     }
     else
     {
         notesdiv.innerHTML=res;
     }
-
 }
 
 function getandupdate(){
@@ -52,7 +46,6 @@ function getandupdate(){
     console.log(note); 
 
     let notejsonArray=[];
-
     if(localStorage.getItem('notesjson')==null)
     {
         notejsonArray.push([note]);
@@ -71,3 +64,6 @@ function getandupdate(){
 
 let addbtn=document.getElementById("addbtn");
 addbtn.addEventListener('click',getandupdate)
+
+let mynotes=document.getElementById("yournotes");
+mynotes.addEventListener('click',update)
