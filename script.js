@@ -1,4 +1,5 @@
 console.log("hello");
+update();
 
 function dlt(index)
 {
@@ -24,25 +25,32 @@ function update(){
         
         let res="";
 
-        notejsonArray.forEach((element,index) => {
-            res+=`<div class="my-2 mx-2 card noteCard" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Note</h5>
-                <p class="card-text">${element}</p>
-                <button class="btn btn-primary my-2" onclick="dlt(${index})">Delete</button>
-            </div>
-        </div>`
-        });
-        notesdiv.innerHTML=res;
+        if(notejsonArray.length!=0)
+        {
+            notejsonArray.forEach((element,index) => {
+                res+=`<div class="my-2 mx-2 card noteCard" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Note ${index+1}</h5>
+                    <p class="card-text">${element}</p>
+                    <button class="btn btn-primary my-2" onclick="dlt(${index})">Delete</button>
+                </div>
+            </div>`
+            });
+            notesdiv.innerHTML=res;
+        }
+        else
+        {
+            notesdiv.innerHTML=`<h5>Nothing to show here!! Please use "Put a Note" Section</h5>`;
+        }
+
+        
     }
-    else
-    {
-        notesdiv.innerHTML=res;
-    }
+
 }
 
 function getandupdate(){
     let note=document.getElementById("addtext").value;
+
     document.getElementById("addtext").value="";
     console.log(note); 
 
@@ -67,5 +75,5 @@ function getandupdate(){
 let addbtn=document.getElementById("addbtn");
 addbtn.addEventListener('click',getandupdate)
 
-let mynotes=document.getElementById("yournotes");
-mynotes.addEventListener('click',update)
+// let mynotes=document.getElementById("yournotes");
+// mynotes.addEventListener('click',update)
